@@ -69,6 +69,7 @@ public class PacoteDAOImpl extends GenericDAOImpl<Pacote,Integer> implements Pac
 				.setParameter("fim", dataFim).getSingleResult();
 	}
 
+	
 	@Override
 	public List<Pacote> pacotesMaiorPreco() {		
 		return em.createQuery("select p from Pacote p where p.preco = (select max(preco) from Pacote)", Pacote.class).getResultList();
