@@ -56,11 +56,22 @@ public class PacoteDAOImpl extends GenericDAOImpl<Pacote,Integer> implements Pac
 			.setParameter("fim", dataFim).getResultList();
 	}
 
+	@Override
+	public double precoMediaPacotes() {		
+		return em.createQuery("select avg(preco) from Pacote", Double.class).getSingleResult();
+	}
+
+	@Override
+	public long qtdPacotesPorDataSaida(Calendar dataInicio, Calendar dataFim) {		
+		return em.createQuery("select count(p) from Pacote p where p.dataSaida "
+				+ "between :inicio and :fim", Long.class)
+				.setParameter("inicio", dataInicio)
+				.setParameter("fim", dataFim).getSingleResult();
+	}
+
+	@Override
+	public List<Pacote> pacotesMaiorPreco() {		
+		return em.createQuery("select p from Pacote p where p.preco = (select max(preco) from Pacote)", Pacote.class).getResultList();
+	}
+
 }
-
-
-
-
-
-
-
