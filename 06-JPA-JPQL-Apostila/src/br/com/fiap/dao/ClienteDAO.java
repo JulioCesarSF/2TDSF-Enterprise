@@ -5,6 +5,8 @@ import java.util.List;
 import br.com.fiap.entity.Cliente;
 
 public interface ClienteDAO extends GenericDAO<Cliente,Integer>{
+	
+	Cliente buscarPorCpf(String cpf);
 
 	List<Cliente> listar();
 	
