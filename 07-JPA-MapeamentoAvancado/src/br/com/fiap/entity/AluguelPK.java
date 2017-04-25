@@ -9,7 +9,6 @@ public class AluguelPK implements Serializable {
 	private int automovel;
 	private Calendar dataAluguel;
 	
-	
 
 	public int getCliente() {
 		return cliente;

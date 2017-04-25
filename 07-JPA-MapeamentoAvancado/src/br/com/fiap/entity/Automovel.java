@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "T_AUTOMOVEL")
+@Table(name = "T_AUTOMOVEL_AUTO")
 @SequenceGenerator(allocationSize = 1, name = "sqAuto", sequenceName = "SQ_T_AUTOMOVEL")
 public class Automovel implements Serializable {
 

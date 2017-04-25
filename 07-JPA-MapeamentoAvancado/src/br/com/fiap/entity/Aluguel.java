@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @IdClass(AluguelPK.class)
-@Table(name = "T_ALUGUEL")
+@Table(name = "T_ALUGUEL_AUTO")
 public class Aluguel {
 
 	@Id
@@ -44,6 +44,16 @@ public class Aluguel {
 
 	public Aluguel() {
 	}
+
+	
+	public Aluguel(Cliente cliente, Automovel automovel, Calendar dataAluguel, double valor) {
+		super();
+		this.cliente = cliente;
+		this.automovel = automovel;
+		this.dataAluguel = dataAluguel;
+		this.valor = valor;
+	}
+
 
 	public Aluguel(Cliente cliente, Automovel automovel, Calendar dataAluguel, Calendar dataRetorno, double valor) {
 		super();
