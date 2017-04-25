@@ -13,7 +13,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "T_CLIENTE")
-@SequenceGenerator(allocationSize = 1, name = "sqCliente", sequenceName = "SQ_T_CLIENTE_AUTO")
+@SequenceGenerator(allocationSize = 1, name = "sqCliente", sequenceName = "SQ_T_CLIENTE")
 public class Cliente implements Serializable {
 
 	/**
