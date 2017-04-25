@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity
-@SequenceGenerator(allocationSize = 1, name = "sqFuncionario", sequenceName = "SQ_T_FUNCIONARIO")
+
 @Table(name = "T_FUNC")
 public class Funcionario implements Serializable {
 
@@ -27,23 +27,24 @@ public class Funcionario implements Serializable {
 
 	@Id
 	@Column(name = "CD_FUNCIONARIO")
+	@SequenceGenerator(allocationSize = 1, name = "sqFuncionario", sequenceName = "SQ_T_FUNCIONARIO")
 	@GeneratedValue(generator = "sqFuncionario", strategy = GenerationType.SEQUENCE)
 	private long id;
 
 	@Column(name = "NM_FUNCIONCARIO", nullable = false)
 	private String nome;
 
-	@Column(name = "DT_ANIVERSARIO")
+	@Column(name = "DT_ADMISSAO")
 	@Temporal(value = TemporalType.DATE)
-	private Calendar dataAniversario;
+	private Calendar dataAdmissao;
 
 	public Funcionario() {
 	}
 
-	public Funcionario(String nome, Calendar dataAniversario) {
+	public Funcionario(String nome, Calendar dataAdmissao) {
 		super();
 		this.nome = nome;
-		this.dataAniversario = dataAniversario;
+		this.dataAdmissao = dataAdmissao;
 	}
 
 	public long getId() {
@@ -62,12 +63,12 @@ public class Funcionario implements Serializable {
 		this.nome = nome;
 	}
 
-	public Calendar getDataAniversario() {
-		return dataAniversario;
+	public Calendar getDataAdmissao() {
+		return dataAdmissao;
 	}
 
-	public void setDataAniversario(Calendar dataAniversario) {
-		this.dataAniversario = dataAniversario;
+	public void setDataAdmissao(Calendar dataAdmissao) {
+		this.dataAdmissao = dataAdmissao;
 	}
 
 }
