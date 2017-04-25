@@ -19,6 +19,8 @@ public class Teste {
 		DependenteDAO dao = new DependenteDAOImpl(em);
 
 		Funcionario func = new Funcionario("Teste", new GregorianCalendar(2013, 1, 1));
+		func.setNumeroConta(121321);
+		func.setSalario(123);
 
 		Dependente dp = new Dependente(func, "Maria");
 
