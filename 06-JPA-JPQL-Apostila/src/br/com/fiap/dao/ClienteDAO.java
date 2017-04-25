@@ -6,6 +6,8 @@ import br.com.fiap.entity.Cliente;
 
 public interface ClienteDAO extends GenericDAO<Cliente,Integer>{
 	
+	List<Cliente> buscarPorAniversario(int mes);
+	
 	Cliente buscarPorCpf(String cpf);
 
 	List<Cliente> listar();
