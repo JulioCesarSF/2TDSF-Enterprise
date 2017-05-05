@@ -2,8 +2,11 @@ package br.com.fiap.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+// @DiscriminatorValue("PF")
+@Table(name = "T_PESSOA_FISICA")
 public class PessoaFisica extends Pessoa {
 
 	@Column(name = "NR_RG")
@@ -12,13 +15,9 @@ public class PessoaFisica extends Pessoa {
 	public PessoaFisica() {
 	}
 
-	public PessoaFisica(String rg) {
-		super();
+	public PessoaFisica(String nome, String rg) {
+		super(nome);
 		this.rg = rg;
-	}
-
-	public PessoaFisica(int cdigo, String nome) {
-		super(cdigo, nome);
 	}
 
 	public String getRg() {

@@ -1,6 +1,8 @@
 package br.com.fiap.entity;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +14,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "T_PESSOA")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+// @DiscriminatorColumn(name = "TIPO_PESSOA")
+// @DiscriminatorValue("P")
+@Inheritance(strategy = InheritanceType.JOINED)
 @SequenceGenerator(allocationSize = 1, name = "sqPessoa", sequenceName = "SQ_T_PESSOA")
 public class Pessoa {
 
@@ -25,6 +29,11 @@ public class Pessoa {
 	private String nome;
 
 	public Pessoa() {
+	}
+
+	public Pessoa(String nome) {
+		super();
+		this.nome = nome;
 	}
 
 	public Pessoa(int cdigo, String nome) {

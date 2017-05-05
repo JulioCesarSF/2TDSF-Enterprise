@@ -16,7 +16,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@IdClass(AluguelPK.class)
+//@IdClass(AluguelPK.class)
 @Table(name = "T_ALUGUEL_AUTO")
 public class Aluguel {
 

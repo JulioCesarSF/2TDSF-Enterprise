@@ -1,17 +1,29 @@
 package br.com.fiap.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="T_PESSOA_JURIDICA")
+//@DiscriminatorValue("PJ")
 public class PessoaJuridica extends Pessoa {
 
-	private int codigo;
-
+	@Column(name = "NR_CNPJ")
 	private String cnpj;
 
-	public int getCodigo() {
-		return codigo;
+	public PessoaJuridica() {
+		super();
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public PessoaJuridica(String cnpj) {
+		super();
+		this.cnpj = cnpj;
+	}
+
+	public PessoaJuridica(String nome, String cnpj) {
+		super(nome);
+		this.cnpj = cnpj;
 	}
 
 	public String getCnpj() {
